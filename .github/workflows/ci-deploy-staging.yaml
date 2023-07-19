@@ -39,6 +39,7 @@ jobs:
             docker container run -dp ${{ vars.STAGING_PORT }}:5008 -t ${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}
 
   trigger-tests:
+    needs: deploy
     name: 'Trigger tests'
     runs-on: ubuntu-latest
     steps:
